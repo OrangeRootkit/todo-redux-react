@@ -1,0 +1,47 @@
+$whiteColor: #FFFFFF;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5F5F5;
+    font-family: Inter, serif;
+    font-weight: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: #54595E;
+}
+
+button,
+button:active,
+button:focus  {
+    border:none;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    border-radius: 4px;
+    color:$whiteColor;
+    cursor: pointer;
+}
+
+ol, ul {
+    list-style: none;
+    }
+
+
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 58px;
+    line-height: 70px;
+    margin-bottom: 33px;
+    color: #000;
+}
+input {
+    border: 0;
+}
