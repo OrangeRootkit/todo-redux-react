@@ -1,12 +1,12 @@
 import React from "react";
 import { Input } from "../UI/Input/Input";
-import { Button } from "../Button/Button";
+import { Button } from "../UI/Button/Button";
 import s from "./ListTopLine.module.scss";
 
-export const ListTopLine = ({ value, changeValue, backGround, addTask }) => {
+export const ListTopLine = ({ value, changeValue, backGround, addTask, inputRef }) => {
   return (
     <form className={s.input__wrapper}>
-      <Input value={value} changeValue={changeValue} backGround={backGround} />
+      <Input inputRef={inputRef} value={value} changeValue={changeValue} backGround={backGround} />
       <Button className={"btn_add"} text={"Add task"} handleButton={addTask} />
     </form>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./global/style/style.scss";
 import { Layout } from "../layout/Layout";
 import { Header } from "../components/Header/Header";
@@ -14,20 +14,19 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.reducerTasks.tasks);
-  // const inputValue  = useSelector((state) => state.reducerInput.inputValue);
-
   const [inputValue, setValue] = useState("");
-  const changeValue = (e) => setValue(e.target.value);
-
   const [backGround, setBackGround] = useState("#FFF");
+  const inputRef = useRef(null)
 
   useEffect(() => {
     localStorage.setItem("savedTasksKey", JSON.stringify(tasks));
   }, [tasks]);
-  console.log(localStorage);
+
+  const changeValue = (e) => setValue(e.target.value);
 
   const addTask = (e) => {
     e.preventDefault();
+    inputRef.current.focus()
     if (inputValue === "") {
       setBackGround("rgba(255, 0, 0, 0.4)");
       setTimeout(() => setBackGround("#FFF"), 500);
@@ -51,10 +50,6 @@ function App() {
   const editTextTask = (e, id) =>
     dispatch({ type: "EDIT_TEXT", payload: [e.target.value, id] });
 
-  // const changeValue = (e) => {
-  //   dispatch ({ type: "CHANGE_INPUT", payload: e.target.value})
-  // };
-
   return (
     <>
       <Layout>
@@ -66,6 +61,7 @@ function App() {
               changeValue={changeValue}
               backGround={backGround}
               addTask={addTask}
+              inputRef = {inputRef}
             />
             <ListTask className={"listTask"}>
               {tasks.map((item) => (

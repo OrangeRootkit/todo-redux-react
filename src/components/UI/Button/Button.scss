@@ -5,6 +5,10 @@
     height: 39px;
     width: 166px;
     background-color: #272829;
+
+        &:hover {
+            background-color: rgb(255, 72, 0);
+        }
     }
 
     &_delComplete {
@@ -12,6 +16,9 @@
         height: 39px;
         width: 214px;
         background: #6C757D;
+        &:hover {
+            background-color: rgb(255, 72, 0);
+        }
     }
 
     &_delAll {
@@ -19,7 +26,9 @@
         height: 39px;
         width: 131px;
         background: #DC3545;
+        &:hover {
+            background-color: rgb(255, 72, 0);
+        }
     }
-    
 }
 

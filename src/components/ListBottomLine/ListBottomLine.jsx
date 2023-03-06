@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./ListBottomLine.module.scss";
-import { Button } from "../Button/Button";
+import { Button } from "../UI/Button/Button";
 
 export const ListBottomLine = ({ deleteComplete, deleteAll  }) => {
 
